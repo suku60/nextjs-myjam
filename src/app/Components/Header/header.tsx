@@ -3,12 +3,20 @@
 import React, { useState } from 'react';
 import './header.css';
 import Image from 'next/image';
+import { useIsMobile } from '@/app/hooks/useIsMobile';
 
 const Header: React.FC = () => {
+  const isMobile1024 = useIsMobile(1024)
+
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleSubmenu = () => {
+    setIsSubmenuOpen(!isSubmenuOpen);
   };
 
   return (
@@ -19,8 +27,8 @@ const Header: React.FC = () => {
             <Image
               height={30}
               width={30}
-              alt=''
-              src={''}
+              alt='logo'
+              src={'/assets/logo.jpg'}
             />
           </a>
           <ul>
@@ -28,22 +36,29 @@ const Header: React.FC = () => {
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
             <li>
-              <p>Websites</p>
-              <ul className='websites_submenu'>
+              <p
+                onClick={(e) => toggleSubmenu()}
+                aria-label="Toggle Websites submenu"
+                aria-expanded={isOpen}
+              >Websites</p>
+              <ul className={`websites_submenu ${isSubmenuOpen ? 'active' : null}`}>
                 <li><a href="/retail">Retail</a></li>
                 <li><a href="/restaurant">Restaurant</a></li>
-                <li><a href="/real-state">Real State</a></li>
+                <li><a href="/real-state">Real&nbsp;State</a></li>
               </ul>
             </li>
           </ul>
-          <div
-            className='menu_mobile'
-            onClick={(e) => toggleMenu()}
-            aria-label="Toggle menu"
-            aria-expanded={isOpen}
-          >
-            <span className='menu_mobile_icon'></span>
-          </div>
+          {
+            isMobile1024 ? <div
+              className='menu_mobile'
+              onClick={(e) => toggleMenu()}
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+            >
+              <span className='menu_mobile_icon'></span>
+            </div> : null
+          }
+
         </nav>
       </header>
     </>

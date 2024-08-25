@@ -1,18 +1,78 @@
-header {}
+header {
+    position: fixed;
+    width: 100vw;
+    height: 133px;
+    background: rgb(255, 251, 148);
+    background: linear-gradient(0deg, rgba(255, 251, 148, 0) 0%, rgba(255, 251, 148, .2) 100%);
+    display: grid;
+    place-items: center;
+}
 
-header nav {}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: calc(100% - 100px);
+}
 
 header nav .logo {}
 
-header nav .logo img {}
+header nav .logo img {
+    border-radius: 5rem;
+}
 
-header nav ul {}
+header nav ul {
+    display: flex;
+    gap: 2rem;
+}
 
-header nav ul li {}
+header nav ul li {
+    list-style: none;
+}
 
-header nav ul li a {}
+header nav ul li:has(ul) {
+    position: relative;
+}
 
-header nav ul li ul.websites_submenu {}
+header nav ul li a,
+header nav ul li p {
+    display: flex;
+    padding-inline: 1rem;
+    padding-block: 8px;
+    transition: .1s;
+    cursor: pointer;
+}
+
+header nav ul li a:hover,
+header nav ul li p:hover {
+    background-color: hsl(58, 100%, 79%, .2);
+    transition: .1s;
+    border-radius: 8px;
+}
+
+header nav ul li ul.websites_submenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 0px;
+    width: fit-content;
+
+    overflow: hidden;
+    position: absolute;
+    bottom: calc(-100% - 16px);
+    right: 0;
+
+    transition: .3s;
+}
+
+header nav ul li ul.websites_submenu.active {
+    height: 40px;
+
+    transition: .3s;
+}
 
 header nav ul li ul.websites_submenu li {}
 
@@ -21,3 +81,10 @@ header nav ul li ul.websites_submenu li a {}
 header nav .menu_mobile {}
 
 header nav .menu_mobile .menu_mobile_icon {}
+
+@media (max-width: 1024px) {
+
+    header nav {
+        max-width: calc(100% - 60px);
+    }
+}
