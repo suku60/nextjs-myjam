@@ -1,5 +1,23 @@
 :root {}
 
+
+/* FONT SETTINGS */
+
+/* SpaceMono */
+
+@font-face {
+  font-family: SpaceMono;
+  font-weight: 800;
+  src: url("/assets/fonts/Space_Mono/SpaceMono-Bold.ttf") format('woff2');
+}
+
+@font-face {
+  font-family: SpaceMono;
+  font-weight: 500;
+  src: url("/assets/fonts/Space_Mono/SpaceMono-Regular.ttf") format('woff2');
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {}
   html {
@@ -11,6 +29,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: SpaceMono;
 }
 
 html,
