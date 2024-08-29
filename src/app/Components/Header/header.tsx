@@ -6,12 +6,20 @@ import Image from 'next/image';
 import { useIsMobile } from '@/app/hooks/useIsMobile';
 
 const Header: React.FC = () => {
+
   const isMobile1024 = useIsMobile(1024);
 
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [isMenuHovered, setIsMenuHovered] = useState(false);
 
+  const MenuItems = [
+    'Websites',
+    'Home',
+    'About',
+    'Contact',
+  ]
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -36,10 +44,13 @@ const Header: React.FC = () => {
             onMouseOver={() => { setIsMenuHovered(true); }}
             onMouseLeave={() => { setIsMenuHovered(false); }}
             className={`${isMenuHovered ? 'active' : ''}`}>
+            {
+
+            }
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li>
+            {/* <li>
               <p
                 onClick={(e) => toggleSubmenu()}
                 aria-label="Toggle Websites submenu"
@@ -51,7 +62,7 @@ const Header: React.FC = () => {
                 <li><a href="/real-state">Real State</a></li>
                 <li><a href="/social-media">Social Media</a></li>
               </ul>
-            </li>
+            </li> */}
           </ul>
           {
             isMobile1024 ? <div
