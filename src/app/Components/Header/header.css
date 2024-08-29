@@ -12,7 +12,6 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     width: 100%;
     max-width: calc(100% - 100px);
 }
@@ -37,7 +36,7 @@ header nav ul {
 header nav ul li {
     list-style: none;
     height: 30px;
-    width: 30px;
+    width: 24px;
     overflow: hidden;
     background-color: hsl(58, 100%, 79%, .8);
     border-radius: 5rem;
@@ -48,11 +47,17 @@ header nav ul li {
 }
 
 header nav ul.active li {
-    width: 76px;
+    display: flex;
+    border-radius: 8px;
+    height: fit-content;
 }
 
-header nav ul li:hover {
-    width: 100px;
+header nav ul.active li a {
+    padding-block: 1rem;
+}
+
+header nav ul.active li:hover {
+    width: 120px !important;
     transition: .2s;
 }
 
@@ -63,13 +68,14 @@ header nav ul li:has(ul) {
 header nav ul li a,
 header nav ul li p {
     display: flex;
-    padding-inline: 1rem;
+    /* padding-inline: 1rem; */
     transition: .1s;
     cursor: pointer;
     align-items: center;
     justify-content: center;
     width: 100%;
     color: hsl(272, 100%, 23%);
+    letter-spacing: 1px;
 }
 
 header nav ul li a,
@@ -87,6 +93,27 @@ header nav ul li:hover p {
     transition: .1s;
 }
 
+
+header nav ul.active li[data-length="3"] {
+    width: calc(3 * 15px);
+}
+
+header nav ul.active li[data-length="4"] {
+    width: calc(4 * 15px);
+}
+
+
+header nav ul.active li[data-length="5"] {
+    width: calc(5 * 15px);
+}
+
+header nav ul.active li[data-length="6"] {
+    width: calc(6 * 15px);
+}
+
+header nav ul.active li[data-length="7"] {
+    width: calc(7 * 15px);
+}
 
 header nav ul li ul.websites_submenu {
     display: flex;
