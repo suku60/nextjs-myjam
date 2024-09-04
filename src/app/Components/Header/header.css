@@ -93,6 +93,13 @@ header nav ul li:hover p {
     transition: .1s;
 }
 
+header nav ul.active li[data-length="1"] {
+    width: calc(1 * 15px);
+}
+
+header nav ul.active li[data-length="2"] {
+    width: calc(2 * 15px);
+}
 
 header nav ul.active li[data-length="3"] {
     width: calc(3 * 15px);
@@ -113,6 +120,18 @@ header nav ul.active li[data-length="6"] {
 
 header nav ul.active li[data-length="7"] {
     width: calc(7 * 15px);
+}
+
+header nav ul.active li[data-length="8"] {
+    width: calc(8 * 15px);
+}
+
+header nav ul.active li[data-length="9"] {
+    width: calc(9 * 15px);
+}
+
+header nav ul.active li[data-length="10"] {
+    width: calc(10 * 15px);
 }
 
 header nav ul li ul.websites_submenu {

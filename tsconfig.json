@@ -33,7 +33,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "out/types/**/*.ts"
-  ],
+, "src/app/Components/Anchors/anchors.js"  ],
   "exclude": [
     "node_modules"
   ]

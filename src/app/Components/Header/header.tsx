@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import './header.css';
 import Image from 'next/image';
 import { useIsMobile } from '@/app/hooks/useIsMobile';
+import { MenuItems } from '@/app/data/items';
 
 const Header: React.FC = () => {
 
@@ -13,15 +14,6 @@ const Header: React.FC = () => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [isMenuHovered, setIsMenuHovered] = useState(false);
 
-  const MenuItems = [
-    'Websites',
-    'Home',
-    'About',
-    'Contact',
-    'Try',
-    'Prueba',
-  ]
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -29,7 +21,6 @@ const Header: React.FC = () => {
   const toggleSubmenu = () => {
     setIsSubmenuOpen(!isSubmenuOpen);
   };
-
 
   return (
     <>
@@ -68,7 +59,6 @@ const Header: React.FC = () => {
               <span className='menu_mobile_icon'></span>
             </div> : null
           }
-
         </nav>
       </header>
     </>
