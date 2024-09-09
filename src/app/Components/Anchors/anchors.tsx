@@ -1,6 +1,9 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 
 const Anchors: React.FC = () => {
+
   const MenuItems: string[] = [
     'Websites',
     'Home',
@@ -14,15 +17,16 @@ const Anchors: React.FC = () => {
   ];
 
   return (
-    <>
-      {MenuItems.map((menuItem: string, index: number) => {
+    <>{
+      MenuItems.map((menuItem: string, index: number) => {
         if (index === 0) return null;
         return (
           <div key={menuItem} id={menuItem.toLocaleLowerCase()}>
             {menuItem}
           </div>
         );
-      })}
+      })
+    }
     </>
   );
 };
