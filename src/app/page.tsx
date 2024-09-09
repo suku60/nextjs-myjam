@@ -5,7 +5,7 @@ import Anchors from "./Components/Anchors/anchors";
 export default function Home() {
   return (
     <main>
-      <Anchors></Anchors>
+      <Anchors/>
     </main>
   );
 }

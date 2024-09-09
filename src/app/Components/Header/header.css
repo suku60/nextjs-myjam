@@ -2,8 +2,8 @@ header {
     position: fixed;
     width: 100vw;
     height: 133px;
-    background: rgb(255, 251, 148);
-    background: linear-gradient(0deg, rgba(255, 251, 148, 0) 0%, rgba(255, 251, 148, .2) 100%);
+    background: rgb(255, 251, 148, .2);
+    /* background: linear-gradient(0deg, rgba(255, 251, 148, 0) 0%, rgba(255, 251, 148, .2) 100%); */
     display: grid;
     place-items: center;
 }
@@ -91,6 +91,10 @@ header nav ul li:hover a,
 header nav ul li:hover p {
     opacity: 1;
     transition: .1s;
+}
+
+header nav ul.active li[data-length] {
+    min-width: 30px;
 }
 
 header nav ul.active li[data-length="1"] {

@@ -40,10 +40,11 @@ const Header: React.FC = () => {
             className={`${isMenuHovered ? 'active' : ''}`}>
             {
               MenuItems.map((menuItem, index) => {
-                if (index === 0) return null
+                // if (index === 0) return null
                 return <li key={menuItem} data-length={menuItem.length}>
-                  <a href={`#${menuItem.toLocaleLowerCase()}`}>
-                    {menuItem}
+                  <a href={`#tema${index+1}`}>
+                    {/* {menuItem.toLocaleLowerCase().split('_¿')[0].replace('$', `${index}`)} */}
+                    {index+1}
                   </a>
                 </li>
               })
