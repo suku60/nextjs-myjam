@@ -21,9 +21,9 @@
 
 
 main {
-    height: 200vh;
+    /* height: 200vh; */
     background-image: linear-gradient(hsl(272, 100%, 23%) 1px, transparent 1px), linear-gradient(to right, hsl(272, 100%, 23%) 1px, hsl(240, 53%, 3%) 1px);
-    background-size: 120px 120px;
-    background-position: center;
+    background-size: 2vw 2vw;
+    background-position: left top;
     /* animation: backgroundSizeDynamics 4s infinite ease-in-out; */
 }

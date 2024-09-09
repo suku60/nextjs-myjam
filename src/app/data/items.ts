@@ -8,5 +8,6 @@ export const MenuItems: string[] = [
   'Prueba',
   'A',
   '13',
+  'Orale',
   'Jesucristo'
 ];
